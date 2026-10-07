@@ -1,0 +1,55 @@
+# Controle financeiro mensal
+
+nome = input("Digite seu nome: ")      # str
+renda = 0.0                            # float
+total_gasto = 0.0                      # float
+quantidade = 0                         # int
+maior_despesa = 0.0                    # float
+renda_informada = False                # bool
+
+opcao = 0
+while opcao != 4:
+    print("\n..............................................")
+    print("              CONTROLE FINANCEIRO")
+    print("..............................................")
+    print("1 - Informar renda mensal")
+    print("2 - Cadastrar despesa")
+    print("3 - Consultar situação financeira")
+    print("4 - Sair")
+    opcao = int(input("Escolha uma opção: "))
+
+    if opcao == 1:
+        renda = float(input("Digite sua renda mensal: R$ "))
+        renda_informada = True
+        print("Renda registrada com sucesso.")
+
+    elif opcao == 2:
+        valor = float(input("Valor da despesa: R$ "))
+        total_gasto = total_gasto + valor
+        quantidade = quantidade + 1
+        if valor > maior_despesa:
+            maior_despesa = valor
+        print("Despesa cadastrada com sucesso.")
+
+    elif opcao == 3:
+        if renda_informada == False:
+            print("Informe a renda mensal primeiro (opção 1).")
+        else:
+            saldo = renda - total_gasto
+            print(f"\nNome: {nome}")
+            print(f"Renda mensal: R$ {renda:.2f}")
+            print(f"Despesas cadastradas: {quantidade}")
+            print(f"Maior despesa: R$ {maior_despesa:.2f}")
+            print(f"Total gasto: R$ {total_gasto:.2f}")
+            if saldo > 0:
+                print(f"Situação: dentro do orçamento. Saldo: R$ {saldo:.2f}")
+            elif saldo == 0:
+                print("Situação: orçamento esgotado (saldo zero).")
+            else:
+                print(f"Situação: orçamento ultrapassado em R$ {-saldo:.2f}")
+
+    elif opcao == 4:
+        print("Encerrando o sistema. Até logo!")
+
+    else:
+        print("Opção inválida. Escolha de 1 a 4.")
