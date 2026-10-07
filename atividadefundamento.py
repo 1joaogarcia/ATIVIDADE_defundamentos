@@ -1,11 +1,9 @@
-# Controle financeiro mensal
-
-nome = input("Digite seu nome: ")      # str
-renda = 0.0                            # float
-total_gasto = 0.0                      # float
-quantidade = 0                         # int
-maior_despesa = 0.0                    # float
-renda_informada = False                # bool
+nome = input("Digite seu nome: ")      
+renda = 0.0                            
+total_gasto = 0.0                      
+quantidade = 0                         
+maior_despesa = 0.0                    
+renda_informada = False                
 
 opcao = 0
 while opcao != 4:
